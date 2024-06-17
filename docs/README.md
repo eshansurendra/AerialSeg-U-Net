@@ -27,3 +27,26 @@ The U-Net architecture is characterized by its unique encoder-decoder structure.
 ![U-Net architecture](/docs/assets/unet.png)
 
 This architecture makes U-Net particularly effective for semantic segmentation tasks involving complex structures and boundaries, as seen in aerial imagery.  The U-Net architecture was originally proposed in the paper ["U-Net: Convolutional Networks for Biomedical Image Segmentation"](https://arxiv.org/pdf/1505.04597) by Olaf Ronneberger, Philipp Fischer, and Thomas Brox. 
+
+### Dataset
+
+This project utilizes the ["Semantic segmentation of aerial imagery dataset"](https://www.kaggle.com/datasets/humansintheloop/semantic-segmentation-of-aerial-imagery), hosted on `Kaggle`. This Public Domain dataset consists of aerial imagery of Dubai, UAE, captured by MBRSC satellites and annotated with pixel-wise semantic segmentation into 6 classes. The total volume of the dataset is 72 images grouped into 6 larger tiles.
+
+**Key Features of the Dataset:**
+
+* **Content:** Satellite images of Dubai, UAE, segmented into six classes.
+* **Classes:**
+    * **Building:** #3C1098
+    * **Land (unpaved area):** #8429F6
+    * **Road:** #6EC1E4
+    * **Vegetation:** #FEDD3A
+    * **Water:** #E2A929
+    * **Unlabeled:** #9B9B9B
+* **Size:** 72 images grouped into 6 larger tiles.
+* **Source:** The images were segmented by the trainees of the Roia Foundation in Syria.
+
+This dataset is ideal for this project due to its:
+
+* **Relevance:** The dataset provides real-world aerial images, suitable for training and evaluating a semantic segmentation model.
+* **Complexity:** The diverse classes and varying scales of objects present a challenging but realistic segmentation task.
+* **Availability:** The dataset is publicly available on Kaggle, making it easily accessible for research and development.

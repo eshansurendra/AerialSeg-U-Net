@@ -1,5 +1,12 @@
 # AerialSeg-U-Net
 
+![Python](https://img.shields.io/badge/Python-3.9.2-blue)
+![Pillow](https://img.shields.io/badge/Pillow-8.3.2-green)
+![matplotlib](https://img.shields.io/badge/matplotlib-3.4.3-orange)
+![scikit-learn](https://img.shields.io/badge/scikit--learn-0.24.2-yellow)
+![numpy](https://img.shields.io/badge/numpy-1.21.2-blue)
+![tensorflow](https://img.shields.io/badge/tensorflow-2.15.0-green)
+
 This repository presents an implementation of a semantic segmentation model for aerial imagery using the U-Net architecture. The project aims to accurately segment various objects and features within aerial images, leveraging the powerful capabilities of the U-Net model. The model is trained to recognize and classify the following classes:
 
 * **Building:**  #3C1098
@@ -8,13 +15,6 @@ This repository presents an implementation of a semantic segmentation model for 
 * **Vegetation:** #FEDD3A
 * **Water:** #E2A929
 * **Unlabeled:** #9B9B9B
-
-![Python](https://img.shields.io/badge/Python-3.9.2-blue)
-![Pillow](https://img.shields.io/badge/Pillow-8.3.2-green)
-![matplotlib](https://img.shields.io/badge/matplotlib-3.4.3-orange)
-![scikit-learn](https://img.shields.io/badge/scikit--learn-0.24.2-yellow)
-![numpy](https://img.shields.io/badge/numpy-1.21.2-blue)
-![tensorflow](https://img.shields.io/badge/tensorflow-2.15.0-green)
 
 ## Project Structure
 

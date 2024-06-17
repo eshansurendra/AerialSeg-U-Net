@@ -9,6 +9,13 @@ This repository presents an implementation of a semantic segmentation model for 
 * **Water:** #E2A929
 * **Unlabeled:** #9B9B9B
 
+![Python](https://img.shields.io/badge/Python-3.9.2-blue)
+![Pillow](https://img.shields.io/badge/Pillow-8.3.2-green)
+![matplotlib](https://img.shields.io/badge/matplotlib-3.4.3-orange)
+![scikit-learn](https://img.shields.io/badge/scikit--learn-0.24.2-yellow)
+![numpy](https://img.shields.io/badge/numpy-1.21.2-blue)
+![tensorflow](https://img.shields.io/badge/tensorflow-2.15.0-green)
+
 ## Project Structure
 
 This project implements a semantic segmentation model for aerial imagery using the U-Net architecture. The U-Net model is a convolutional neural network specifically designed for image segmentation tasks, achieving high accuracy in segmenting various objects and features within images. The code in this repository leverages TensorFlow to implement the U-Net model and perform segmentation on aerial imagery. 

@@ -16,9 +16,15 @@ This repository presents an implementation of a semantic segmentation model for 
 * **Water:** #E2A929
 * **Unlabeled:** #9B9B9B
 
+
+
 # Project Overview
 
 This project implements a semantic segmentation model for aerial imagery using the U-Net architecture. The U-Net model is a convolutional neural network specifically designed for image segmentation tasks, achieving high accuracy in segmenting various objects and features within images. The code in this repository leverages TensorFlow to implement the U-Net model and perform segmentation on aerial imagery. 
+
+<div style="width: 5%; height: 5px; background-color: #d9e2f1; padding: 20px; box-sizing: border-box; text-align: center;">
+  <img src="/docs/assets/banner.png" alt="New Image" title="New Image" style="width: 1100px; max-width: 5%;" />
+</div>
 
 ## U-Net architecture
 

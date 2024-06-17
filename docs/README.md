@@ -293,7 +293,7 @@ Here are examples of segmentation predictions made by the model on test images:
 
 # Pretrained Models
 
-Pretrained models are provided in the `pretrained_models` directory. You can load and use these models directly without training:
+Pretrained models are provided in the `Saved-Models` directory. You can load and use these models directly without training:
 
 * `satellite_standard_unet_100epochs.keras`
 

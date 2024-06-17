@@ -266,8 +266,6 @@ The U-Net model, trained on the "Semantic segmentation of aerial imagery" datase
 
 **Performance Metrics:**
 
-
-
 * **Test Accuracy:** 87%
 * **Test Jaccard Coefficient (IoU):** 0.7308
 * **Test Loss:** 0.8974
@@ -287,23 +285,37 @@ Here are examples of segmentation predictions made by the model on test images:
 
 ![ex3](/docs/assets/ex3.png)
 
-**Visualizations:**
+## Pretrained Models
 
-You'll need to add actual images to illustrate the segmentation results.  Here's a possible format for displaying two plots side-by-side:
+Pretrained models are provided in the `pretrained_models` directory. You can load and use these models directly without training:
 
-```markdown
-[Image of original test image]  [Image of predicted segmentation mask]
+* `satellite_standard_unet_100epochs.keras`
 
-[Image of original test image]  [Image of predicted segmentation mask]
+## References
 
-... (Add more pairs of images as needed)
-```
+* **U-Net: Convolutional Networks for Biomedical Image Segmentation**
+    * Olaf Ronneberger, Philipp Fischer, and Thomas Brox
+    * [https://arxiv.org/pdf/1505.04597](https://arxiv.org/pdf/1505.04597)
 
-**Key Takeaways:**
+* **Semantic segmentation of aerial imagery**
+    * Satellite images of Dubai, the UAE segmented into 6 classes
+    * [https://www.kaggle.com/datasets/humansintheloop/semantic-segmentation-of-aerial-imagery](https://www.kaggle.com/datasets/humansintheloop/semantic-segmentation-of-aerial-imagery)
+    **License:** CC0: Public Domain
+    **Acknowledgements:** The images were segmented by the trainees of the Roia Foundation in Syria.
 
-* The model's high accuracy and IoU scores demonstrate its ability to effectively classify pixels into different object categories.
-* The visualizations illustrate the model's capacity to segment real-world aerial images with a reasonable level of accuracy.
+**For a more comprehensive understanding of the implementation, please refer to the complete notebook published on Kaggle:**
 
-This performance evaluation highlights the success of the U-Net architecture in tackling the challenging task of semantic segmentation on aerial imagery. The results demonstrate the model's potential for applications in various domains, including urban planning, environmental monitoring, and infrastructure management.
+[https://www.kaggle.com/code/eshansurendra/semantic-segmentation-using-u-net/notebook#Semantic-segmentation-of-aerial-imagery-using-U-Net](https://www.kaggle.com/code/eshansurendra/semantic-segmentation-using-u-net/notebook#Semantic-segmentation-of-aerial-imagery-using-U-Net) 
 
+## Contributing
 
+Contributions are welcome! 
+
+- **Bug Fixes:** If you find any bugs or issues, feel free to create an issue or submit a pull request.
+- **Feature Enhancements:** If you have ideas for new features or improvements, don't hesitate to share them.
+
+## License
+
+This project is licensed under the [MIT License](LICENSE). 
+
+[go to the top](#AerialSeg-U-Net)

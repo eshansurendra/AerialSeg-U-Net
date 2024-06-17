@@ -16,11 +16,11 @@ This repository presents an implementation of a semantic segmentation model for 
 * **Water:** #E2A929
 * **Unlabeled:** #9B9B9B
 
-## Project Overview
+# Project Overview
 
 This project implements a semantic segmentation model for aerial imagery using the U-Net architecture. The U-Net model is a convolutional neural network specifically designed for image segmentation tasks, achieving high accuracy in segmenting various objects and features within images. The code in this repository leverages TensorFlow to implement the U-Net model and perform segmentation on aerial imagery. 
 
-### U-Net architecture
+## U-Net architecture
 
 The U-Net architecture is characterized by its unique encoder-decoder structure. The encoder progressively downsamples the input image using convolutional and pooling layers, extracting hierarchical feature maps. The decoder then upsamples these features, gradually reconstructing the segmented image.  A key feature of U-Net is the use of skip connections, which combine feature maps from the encoder with corresponding decoder layers. This allows the model to retain fine-grained spatial information from the input, improving segmentation accuracy. 
 
@@ -30,7 +30,7 @@ The U-Net architecture is characterized by its unique encoder-decoder structure.
 
 This architecture makes U-Net particularly effective for semantic segmentation tasks involving complex structures and boundaries, as seen in aerial imagery.  The U-Net architecture was originally proposed in the paper ["U-Net: Convolutional Networks for Biomedical Image Segmentation"](https://arxiv.org/pdf/1505.04597) by Olaf Ronneberger, Philipp Fischer, and Thomas Brox. 
 
-### Dataset
+## Dataset
 
 This project utilizes the ["Semantic segmentation of aerial imagery dataset"](https://www.kaggle.com/datasets/humansintheloop/semantic-segmentation-of-aerial-imagery), hosted on `Kaggle`. This Public Domain dataset consists of aerial imagery of Dubai, UAE, captured by MBRSC satellites and annotated with pixel-wise semantic segmentation into 6 classes. The total volume of the dataset is 72 images grouped into 6 larger tiles.
 
@@ -54,13 +54,13 @@ This dataset is ideal for this project due to its:
 * **Availability:** The dataset is publicly available on Kaggle, making it easily accessible for research and development.
 
 
-## Project Structure
+# Project Structure
 
 **`Complete Notebook hosted on Kaggle:` [https://www.kaggle.com/code/eshansurendra/semantic-segmentation-using-u-net](https://www.kaggle.com/code/eshansurendra/semantic-segmentation-using-u-net)**
 
 This notebook provides a comprehensive implementation of the semantic segmentation project using the U-Net model, covering data preprocessing, model building, training, and prediction steps. 
 
-### Data Preparation
+## Data Preparation
 
 This section details the steps involved in preparing the dataset for training the U-Net model.  The dataset is first loaded, then preprocessed to ensure consistency and enhance training performance. Finally, the images and masks are divided into smaller patches to improve processing efficiency.
 
@@ -126,7 +126,7 @@ After patchification, the image_dataset and mask_dataset contain a collection of
 
 This process ensures that the dataset is structured in a way that optimizes training efficiency and model performance. 
 
-### Model Building
+## Model Building
 
 This section focuses on the construction and configuration of the U-Net model, which will be used to perform semantic segmentation on aerial images.
 
@@ -190,7 +190,7 @@ X_train, X_test, y_train, y_test = train_test_split(image_dataset, labels_cat, t
 
 This completes the model building process, preparing the model for training on the prepared dataset.
 
-### Training
+## Training
 
 This section describes the process of training the U-Net model on the prepared dataset. 
 
@@ -217,7 +217,7 @@ After training is complete, the trained model weights are saved to a file using 
 model.save("/kaggle/working/satellite_standard_unet_100epochs.hdf5") 
 ```
 
-### Prediction
+## Prediction
 
 This section focuses on using the trained U-Net model to make predictions on new images and visualize the results. 
 
@@ -254,7 +254,7 @@ y_test_argmax = np.argmax(y_test, axis=3)
 ```
 
 
-## Results
+# Results
 
 The U-Net model, trained on the "Semantic segmentation of aerial imagery" dataset, achieved promising results on the segmentation task.  This section presents the key performance metrics and visualizations to illustrate the model's capabilities. 
 
@@ -285,13 +285,13 @@ Here are examples of segmentation predictions made by the model on test images:
 
 ![ex3](/docs/assets/ex3.png)
 
-## Pretrained Models
+# Pretrained Models
 
 Pretrained models are provided in the `pretrained_models` directory. You can load and use these models directly without training:
 
 * `satellite_standard_unet_100epochs.keras`
 
-## References
+# References
 
 * **U-Net: Convolutional Networks for Biomedical Image Segmentation**
     * Olaf Ronneberger, Philipp Fischer, and Thomas Brox
@@ -307,14 +307,14 @@ Pretrained models are provided in the `pretrained_models` directory. You can loa
 
 [https://www.kaggle.com/code/eshansurendra/semantic-segmentation-using-u-net/notebook#Semantic-segmentation-of-aerial-imagery-using-U-Net](https://www.kaggle.com/code/eshansurendra/semantic-segmentation-using-u-net/notebook#Semantic-segmentation-of-aerial-imagery-using-U-Net) 
 
-## Contributing
+# Contributing
 
 Contributions are welcome! 
 
 - **Bug Fixes:** If you find any bugs or issues, feel free to create an issue or submit a pull request.
 - **Feature Enhancements:** If you have ideas for new features or improvements, don't hesitate to share them.
 
-## License
+# License
 
 This project is licensed under the [MIT License](LICENSE). 
 

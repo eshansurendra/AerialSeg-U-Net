@@ -16,7 +16,8 @@ This repository presents an implementation of a semantic segmentation model for 
 * **Water:** #E2A929
 * **Unlabeled:** #9B9B9B
 
-
+> [!TIP]
+> For a more comprehensive understanding of the implementation, refer this [notebook on Kaggle](https://www.kaggle.com/code/eshansurendra/semantic-segmentation-using-u-net/notebook#Semantic-segmentation-of-aerial-imagery-using-U-Net)
 
 # Project Overview
 

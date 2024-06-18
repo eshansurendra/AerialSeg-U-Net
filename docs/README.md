@@ -70,16 +70,19 @@ This notebook provides a comprehensive implementation of the semantic segmentati
 
 This section details the steps involved in preparing the dataset for training the U-Net model.  The dataset is first loaded, then preprocessed to ensure consistency and enhance training performance. Finally, the images and masks are divided into smaller patches to improve processing efficiency.
 
-**1. Loading Images and Masks**
+### **1. Loading Images and Masks**
 
-The code iterates through the dataset directory, reading images from subdirectories named 'images' and masks from subdirectories named 'masks'.  **It's crucial to ensure that the image and mask files are sorted in the same order to avoid mismatching pairs during training.** To achieve this, use the `sorted` method when listing the files:
+The code iterates through the dataset directory, reading images from subdirectories named 'images' and masks from subdirectories named 'masks'.
 
-```python
-images = sorted(os.listdir(path))  # Sort images in the directory
-masks = sorted(os.listdir(path))  # Sort masks in the directory
-```
+> [!WARNING]
+> **It's crucial to ensure that the image and mask files are sorted in the same order to avoid mismatching pairs during training.** To achieve this, use the `sorted` method when listing the files:
+  
+  ```python
+  images = sorted(os.listdir(path))  # Sort images in the directory
+  masks = sorted(os.listdir(path))  # Sort masks in the directory
+  ```
 
-**2. Preprocessing**
+### **2. Preprocessing**
 
 * **Resizing:**  As images in the dataset have different sizes, they are cropped to the nearest size divisible by the patch size (256 in this case). This ensures that all images have dimensions that are multiples of the patch size, which is important for patching.
 * **Normalization:** The image pixel values are normalized using a MinMaxScaler to scale them to the range [0, 1]. This helps to improve training stability and reduce the impact of large pixel values.
@@ -93,7 +96,7 @@ image = image.crop((0 ,0, SIZE_X, SIZE_Y))  #Crop from top left corner
 image = np.array(image) 
 ```
 
-**3. Patchification**
+### **3. Patchification**
 
 The `patchify` method is used to divide the preprocessed images and masks into smaller patches of size 256x256. This is crucial for efficient processing, as it allows the model to train on smaller chunks of data, which are easier to handle.  The code iterates through each patch, normalizing it (using the MinMaxScaler) and appending it to the image_dataset and mask_dataset lists.
 
@@ -136,7 +139,7 @@ This process ensures that the dataset is structured in a way that optimizes trai
 
 This section focuses on the construction and configuration of the U-Net model, which will be used to perform semantic segmentation on aerial images.
 
-**1. U-Net Architecture**
+### **1. U-Net Architecture**
 
 The U-Net architecture is implemented using TensorFlow's Keras API. The model consists of:
 
@@ -144,7 +147,7 @@ The U-Net architecture is implemented using TensorFlow's Keras API. The model co
 * **Decoder:** A series of upsampling and convolutional layers to reconstruct the segmented image using the extracted features.
 * **Skip Connections:**  These connections link corresponding layers in the encoder and decoder, enabling the model to retain spatial information from the input image and improve segmentation accuracy.
 
-**2. Model Compilation**
+### **2. Model Compilation**
 
 The U-Net model is compiled using the following parameters:
 
@@ -200,7 +203,7 @@ This completes the model building process, preparing the model for training on t
 
 This section describes the process of training the U-Net model on the prepared dataset. 
 
-**1. Training Loop**
+### **1. Training Loop**
 
 The model is trained using the `fit` method from Keras. The training loop involves the following steps:
 
@@ -215,7 +218,7 @@ history1 = model.fit(
 )
 ```
 
-**2. Model Saving**
+### **2. Model Saving**
 
 After training is complete, the trained model weights are saved to a file using the `save` method from Keras. This allows us to load and use the trained model for predictions later.
 
@@ -227,7 +230,7 @@ model.save("/kaggle/working/satellite_standard_unet_100epochs.hdf5")
 
 This section focuses on using the trained U-Net model to make predictions on new images and visualize the results. 
 
-**1. Model Loading**
+### **1. Model Loading**
 
 The trained model is loaded from the saved file using the `load_model` function from Keras. It's important to specify the custom loss functions and metrics defined during training to ensure compatibility.
 
@@ -241,7 +244,11 @@ custom_objects = {
 # Load the model with custom objects
 model = load_model(model_path, custom_objects=custom_objects)
 ```
-**2. Prediction**
+
+> [!TIP]
+> Pretrained models are provided in the `Saved-Models` directory. You can load and use these models directly without training:
+
+### **2. Prediction**
 
 The loaded model is used to predict segmentation masks for new images. The `predict` method takes the input images as arguments and returns the predicted masks. 
 
@@ -250,7 +257,7 @@ The loaded model is used to predict segmentation masks for new images. The `pred
 y_pred = model.predict(X_test)
 ```
 
-**3. Post-processing**
+### **3. Post-processing**
 
 In this example, the predicted masks are processed by taking the argmax across the last dimension, effectively selecting the class with the highest probability at each pixel. This results in a single-channel mask where each pixel represents the predicted class.
 
@@ -290,12 +297,6 @@ Here are examples of segmentation predictions made by the model on test images:
 ![ex2](/docs/assets/ex2.png)
 
 ![ex3](/docs/assets/ex3.png)
-
-# Pretrained Models
-
-Pretrained models are provided in the `Saved-Models` directory. You can load and use these models directly without training:
-
-* `satellite_standard_unet_100epochs.keras`
 
 # References
 
